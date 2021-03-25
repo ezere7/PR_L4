@@ -227,6 +227,10 @@ function activateAnswers() {
 }
 activateAnswers()
 
+function clearClass(element){
+    element.classList.remove('correct');
+}
+
 function doAction(event) {
     console.log(event.target.innerHTML)
     event.target
