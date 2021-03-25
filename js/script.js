@@ -209,7 +209,7 @@ function markIncorrect(element){
     element.classList.add('incorrect');
 }
 
-function correct(element){
+function markCorrect(element){
     element.classList.add('correct');
 }
 
@@ -225,7 +225,7 @@ function activateAnswers() {
         answers[i].addEventListener('click', doAction);
     }
 }
-activateAnswers();
+activateAnswers()
 
 function doAction(event) {
     console.log(event.target.innerHTML)
@@ -233,11 +233,11 @@ function doAction(event) {
     if (event.target.innerHTML === preQuestions[index].correct_answer) {
         points++;
         pointsElem.innerText = points;
-        correct();
+        markCorrect(event.target);
     }
     else {
         pointsElem.innerText = points;
-        markIncorrect();
+        markIncorrect(event.target);
     }
     disableAnswers();
 }
